@@ -1,0 +1,34 @@
+{
+    "accountId": "YOUR ACCOUNT ID",
+    "region": "us-west-2",
+    "vpc": {
+        "environments": [{
+                "environmentName": "prod",
+                "cidr": "10.0.0.0/16",
+                "maxAZs": 2,
+                "subnets": [{
+                        "name": "DMZ",
+                        "subnetType": "Public"
+                    },
+                    {
+                        "name": "APP",
+                        "subnetType": "Private"
+                    },
+                    {
+                        "name": "DB",
+                        "subnetType": "Public"
+                    }
+                ]
+            },
+            {
+                "environmentName": "dev",
+                "cidr": "10.0.0.0/16",
+                "maxAZs": 1,
+                "subnets": [{
+                    "name": "APP",
+                    "subnetType": "Public"
+                }]
+            }
+        ]
+    }
+}
